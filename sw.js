@@ -5,7 +5,7 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         '/index.html',
         '/public/css/style.css',
-        '/public/js/app.js',
+        '/public/js/main.js',
         '/public/img/star-wars-logo.jpg',
         '/public/img/myLittleVader.jpg'
       ]);
