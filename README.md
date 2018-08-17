@@ -1,0 +1,2 @@
+# SWForSolveDNSHijacking
+使用service worker缓解DNS被劫持的问题
