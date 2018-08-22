@@ -1,0 +1,9 @@
+{
+  "data":[
+    {
+      "domain":"webresource.c-ctrip.com",
+      "backup":[""],
+      "addCache":true
+    }
+  ]
+}

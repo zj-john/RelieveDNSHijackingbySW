@@ -4,16 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Service worker demo</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
 
   <body>
-    <h1>Lego Star Wars gallery</h1>
-    <section></section>
+    <h1>Service Worker Demo</h1>
+    <section>Jquery is Error</section>
     <script>
-      // register service worker
+      // 特性检查
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(function(reg) {
+        // 注册
+        navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(function(reg) {
           if(reg.installing) {
             console.log('Service worker installing');
           } else if(reg.waiting) {
@@ -22,12 +23,11 @@
             console.log('Service worker active');
           }
         }).catch(function(error) {
-          // registration failed
           console.log('Registration failed with ' + error);
         });
       }
     </script>
     <script src="//webresource.c-ctrip.com/reshotelebookingonline/R3/js/jquery-1.7.1.js"></script>
-    <script src="/public/js/main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

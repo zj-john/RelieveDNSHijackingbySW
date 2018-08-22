@@ -1,19 +1,16 @@
-
+var dnsconfig = {};
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v1').then(function(cache) {
-      return cache.addAll([
-        '/index.html',
-        '/public/css/style.css',
-        '/public/js/main.js',
-        '/public/img/star-wars-logo.jpg',
-        '/public/img/myLittleVader.jpg'
-      ]);
+    fetch('./dnsconfig.json').then(function(response){
+      response.json().then( data => {
+        dnsconfig = data;
+      });
     })
-  );
+  )
 });
 
 self.addEventListener('fetch', function(event) {
+  console.log("response", dnsconfig);
   event.respondWith(
     fetch(event.request).then(function(response) {
         return response;
@@ -21,9 +18,7 @@ self.addEventListener('fetch', function(event) {
         var request = event.request;
         if(request.destination==='script') {
           if(request.url.indexOf('webresource')>-1){
-            console.log("webresource error");
             var backupUrl = "https://code.jquery.com/jquery-1.12.4.min.js";
-            // let backupRequest = new Request(request.url.replace('webresource.c-ctrip.com', webresource_new_domain), {
             let backupRequest = new Request(backupUrl, {
               method: request.method,
               headers: request.headers,
@@ -34,7 +29,9 @@ self.addEventListener('fetch', function(event) {
             return fetch(backupRequest);
           }
         }
-        return new Response("this not js resource is error")
+        return new Response('<p>Resource Error!</p>', {
+          headers: { 'Content-Type': 'text/html' }
+        })
     })
   );
 });

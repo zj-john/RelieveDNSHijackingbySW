@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+h1 {
+  height: 97px;
+  text-align: center;
+  color: red
+}
+
+section {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 24px;
+  color: red
+}
