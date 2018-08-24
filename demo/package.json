@@ -1,6 +1,6 @@
 {
-  "name": "swforsolvednshijacking",
-  "version": "0.0.0",
+  "name": "relieve-dns-hijacking-by-sw",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node app.js"

@@ -78,13 +78,7 @@ self.addEventListener('fetch', function(event) {
                 requestInit.headers[k] = v;
               }
             });
-            // const myHeaders = new Headers(request.headers);
-            // myHeaders.append('Host', host);
-            // myHeaders.append('Content-Type', 'image/jpeg');
             var backupRequest = new Request(backupUrl, requestInit);
-            // backupRequest.Host = host;
-            // backupRequest.Header.Set("host", host)
-            // return fetch(backupRequest);
             return caches.open(RUNTIME).then(cache => {
               return fetch(backupRequest).then(response => {
                 // Put a copy of the response in the runtime cache.
