@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Service worker demo</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
@@ -14,7 +14,7 @@
       // 特性检查
       if ('serviceWorker' in navigator) {
         // 注册
-        navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(function(reg) {
+        navigator.serviceWorker.register('service-worker.js', { scope: '/' }).then(function(reg) {
           if(reg.installing) {
             console.log('Service worker installing');
           } else if(reg.waiting) {
@@ -28,6 +28,6 @@
       }
     </script>
     <script src="//webresource.c-ctrip.com/reshotelebookingonline/R3/js/jquery-1.7.1.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
