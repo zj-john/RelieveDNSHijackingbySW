@@ -14,7 +14,7 @@
       // 特性检查
       if ('serviceWorker' in navigator) {
         // 注册
-        navigator.serviceWorker.register('service-worker.js', { scope: '/' }).then(function(reg) {
+        navigator.serviceWorker.register('service-worker.js').then(function(reg) {
           if(reg.installing) {
             console.log('Service worker installing');
           } else if(reg.waiting) {
