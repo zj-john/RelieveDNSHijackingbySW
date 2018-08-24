@@ -90,11 +90,11 @@ self.addEventListener('fetch', function(event) {
                 // Put a copy of the response in the runtime cache.
                 return cache.put(event.request, response.clone()).then(() => {
                   return response;
-                });
-              });
-            });
-        });
-      });
-    });
+                })
+              })
+            })
+        })
+      })
+    })
   )
 });
