@@ -71,7 +71,8 @@ self.addEventListener('fetch', function(event) {
               mode: request.mode,
               cache: 'default',
               credentials: request.credentials,
-              redirect: 'manual'
+              // redirect: 'manual',
+              redirect: 'follow'
             };
             request.headers.forEach(function(v,k){
               if(requestInit.headers[k] === undefined) {
