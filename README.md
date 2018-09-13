@@ -84,6 +84,8 @@ demo文件夹下是一个可以运行的，基于node，使用https的web站点�
 
 [地址](https://zj-john.github.io/RelieveDNSHijackingbySW/demo/public/index.html)
 
+使用方式：  
+通过修改hosts等方式，使目前访问的webresource.c-ctrip.com 无法访问。站点将从webresource.ctrip.com获取资源，并缓存。
 
 #### chrome环境配置：  
 本地运行的https是不安全的，所以要想service-worker能够成功运行，需要配置下浏览器的启动参数。
